@@ -1472,7 +1472,7 @@ button:focus {
 
 .reservation_form .form-group input::-moz-placeholder {
     font-size: 13px;
-    font-family: vazir
+    font-family: vazir;
     font-weight: 300;
     color: #999999;
 }
