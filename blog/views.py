@@ -17,5 +17,11 @@ def blog_view(request):
 
 def single_view(request,pid):
     post = get_object_or_404(Post, pk=pid)
+    
+    # simple counted_view
+    post.counted_view += 1
+    post.save()
+    
+    
     context = {'post': post}
     return render(request, 'blog/single.html',context)
