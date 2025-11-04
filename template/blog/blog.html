@@ -123,10 +123,7 @@
                         <div class="col-md-3">
                             <div class="blog_info text-right">
                                 <div class="post_tag">
-                                    <a href="#">غذا،</a>
-                                    <a class="active" href="#">تکنولوژی،</a>
-                                    <a href="#">سیاست،</a>
-                                    <a href="#">زندگی</a>
+                                    <a href="#">{{post.category.all | join:", "}}</a>
                                 </div>
                                 <ul class="blog_meta list" dir="ltr">
                                     <li><a href="#"> {{post.author.get_full_name}}<i class="lnr lnr-user"></i></a></li>

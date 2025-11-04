@@ -22,6 +22,14 @@ def single_view(request,pid):
     post.counted_view += 1
     post.save()
     
+    # Previous and next posts (by ID or publish date)
+    previous_post = Post.objects.filter(id__lt=post.id).order_by('-id').first()
+    next_post = Post.objects.filter(id__gt=post.id).order_by('id').first()
     
-    context = {'post': post}
+    
+    context = {
+        'post': post,
+        'previous_post': previous_post,
+        'next_post': next_post,
+    }
     return render(request, 'blog/single.html',context)
